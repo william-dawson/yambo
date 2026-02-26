@@ -49,7 +49,8 @@ module functions
      NAN= ieee_is_nan(E)
 #else
      real(SP) :: E
-     NAN= isnan(E)
+     !NAN= isnan(E)
+     NAN = (E /= E)
 #endif
    end function NAN
    !

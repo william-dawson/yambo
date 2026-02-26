@@ -62,7 +62,7 @@ subroutine WF_shift_kpoint_gpu(b_to_shift,nb_to_shift,ikbz,i_sp_pol,wf_shift,Xk,
      !DEV_CUF kernel do(3) <<<*,*>>>
      !DEV_OMPGPU target map(present,alloc:WF_tmp,G_m_G,WF_k_out)
      !DEV_OMPGPU teams loop collapse(3)
-     !DEV_OMP parallel do default(shared), private(i_sp_pol,i_b,i_spinor,ig,igp),collapse(3)
+     !DEV_OMP parallel do default(shared), private(i_b,i_spinor,ig,igp),collapse(3)
      !
      do i_b=i_b1,i_b2
        do i_spinor=1,n_spinor
